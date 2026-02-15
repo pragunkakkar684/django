@@ -63,7 +63,7 @@
 
         <form method="post">
             {% csrf_token %}
-            <input type="text" name="captcha" {% if disabled %}disabled{% endif %}>
+            <input type="text" name="captcha" value="{{ user_input }}" {% if disabled %}disabled{% endif %}>
             <button type="submit" {% if disabled %}disabled{% endif %}>Verify</button>
         </form>
 

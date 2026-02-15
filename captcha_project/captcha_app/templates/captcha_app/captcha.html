@@ -43,6 +43,14 @@
             margin-top: 15px;
             font-weight: bold;
         }
+
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
     </style>
 </head>
 
@@ -59,7 +67,11 @@
             <button type="submit" {% if disabled %}disabled{% endif %}>Verify</button>
         </form>
 
-        <div class="msg">{{ message }}</div>
+        {% if message %}
+            <div class="msg {% if 'matched' in message %}success{% else %}error{% endif %}">
+                {{ message }}
+            </div>
+        {% endif %}
     </div>
 
 </body>
